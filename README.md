@@ -18,7 +18,7 @@ Um diese Applikationen starten zu Nutzen werden folgende Schritte benötigt:
 
 ## Inhalt dieses Projektes
 
-### devBox
+### [devBox](/devBox)
 
 Eine Entwicklungsumgebung für lokales testen von Microservices.
 
@@ -27,7 +27,7 @@ Folgende Services können mithilfe von Vagrant gestartet werden:
 
 Siehe [hier](/devBox) für weitere Informationen und Installationsanweisungen.
 
-### gateway
+### [gateway](gateway)
 
 Eine Applikation unter Einsatz des von Spring Boot mit Einsatz von verschiedenen externen Komponenten.
 Durch den Einsatz von Oracle muss allerding noch die 'ojdbc7.jar' selbst bereitgestellt werden. 
@@ -42,7 +42,7 @@ Verfügbare Endpunkte:
     * '/login'
     * Darüber hinaus noch einige welche über '/name/*' erreichbar sind, siehe [nameservice](#nameservice)
 
-### nameservice
+### [nameservice](/nameservice)
 
 Spring Boot Applikation, welche alle Zugriffe auf den Endpunkt '/name/*' des Gateways entgegen nimmt.
 
@@ -57,7 +57,7 @@ Verfügbare Endpunkte
     * '/reverse/{string}', zum versenden einer Nachricht an den 'reverse-service'. 
         Sobald die Nachricht bearbeitet wurde, der unter {string} angegebene wert in umgekehrter Reihenfolge zurückgegeben.
    
-### reverse-service
+### [reverse-service](/reverse-service)
 
 Weitere Spring Boot Applikation für das Empfangen und zurücksenden von Nachrichten mittels RabbitMQ.
  
