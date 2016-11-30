@@ -1,4 +1,4 @@
-# Vagrant Docker Image
+# Vagrant Docker Image CNTLM version
 
 Vagrantfile to start a Vagrant box. Inside the box docker will be installed and the following services will be pulled and run:
 
@@ -9,21 +9,7 @@ Vagrantfile to start a Vagrant box. Inside the box docker will be installed and 
 
 All init scripts for the Oracle DB can be found inside the /init/oracle/ directory.
 
-This is the "normal" version of this repo. This can be used without proxies or with proxies set like:
-
-    <proxy>:<port>
-    
-    or
-    
-    <username>:<password>@<proxy>:<port>
-	
-If you are using cntlm to config your proxy, please chekout branch: cntlm
-
-To be able to run behind a proxy, you have to install the vagrant-proxyconf plugin using:
-
-```
-vagrant plugin install vagrant-proxyconf
-```
+This is the cntlm version of the repo. If you have your proxy configured with cntlm, then you should use this branch.
 
 ## Needed Software
 
@@ -142,5 +128,6 @@ Vagrant don't call docker run for a docker container till it's command did not c
 addition will not have any effect!
 
 Workaround:
+
 1. Destroy the box and restart it (the full download of docker containers have to be done!)
 2. Change oracle-args in 'images.yml'. You can add/remove a '/' at '-v /vagrant/init/oracle(/)'. For this case, the command has "changed" and it will re-run the container on provision. 
