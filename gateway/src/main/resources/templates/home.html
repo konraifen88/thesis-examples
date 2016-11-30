@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Gateway application</title>
+</head>
+<body>
+<h1>Welcome to the Gateway</h1>
+<p>
+    This Application is secured with Spring Security and using Spring Session. <br/>
+    After Authentication the session will be saved to a Redis DB, where all services can access these session data.<br/>
+    The userdata is saved in an Oracle-12c DB and will be checked when trying to login.
+</p>
+<h3>The following links will only work if nameservice is running!</h3>
+<p>
+    Click <a th:href="@{/name/admin}">here</a> to go to a admin only page. <br/>
+    Click <a th:href="@{/name/user}">here</a> to go to a authenticated only page.<br/>
+</p>
+<h3>The following link will only work if nameservice and reverse-service are running!</h3>
+<p>
+    Click <a th:href="@{/name/reverse}">here</a> to get a reversed version of hello world.<br/>
+    If you want to reverse any other string, you can use: <i>/user/reverse/{any string you like to reverse}</i>
+</p>
+<h3>For login you could use the following credentials, when running example with <a
+        href="https://github.com/konraifen88/thesis-examples/tree/master/devBox">devBox</a> :</h3>
+<p>
+    Role: ADMIN<br/>
+    Username: leonard<br/>
+    Password: password<br/><br/>
+    Role: USER<br/>
+    Username: sheldon<br/>
+    Password: password<br/><br/>
+</p>
+</body>
+</html>

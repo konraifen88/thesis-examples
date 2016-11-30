@@ -1,0 +1,58 @@
+group 'de.konraifen88.thesis.example'
+version '1.0-SNAPSHOT'
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '3.1'
+  distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'http://repo.spring.io/plugins-release' }
+    }
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE'
+        classpath 'org.cloudfoundry:cf-gradle-plugin:1.1.3'
+        classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.7'
+    }
+}
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'propdeps'
+apply plugin: 'propdeps-idea'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+repositories {
+    mavenCentral()
+}
+dependencies {
+    //Spring Boot Dependencies
+    compile "org.springframework.boot:spring-boot-configuration-processor"
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.boot:spring-boot-starter-actuator"
+    compile "org.springframework.boot:spring-boot-devtools"
+    compile "org.springframework.boot:spring-boot-starter-thymeleaf"
+    compile "org.springframework.boot:spring-boot-starter-security"
+    //Spring Session Dependencies
+    compile "org.springframework.session:spring-session-data-redis"
+    //Spring Cloud Dependencies
+    //Automatic version not working for zuul
+    compile 'org.springframework.cloud:spring-cloud-starter-zuul:1.2.2.RELEASE'
+    compile "org.springframework.cloud:spring-cloud-cloudfoundry-connector"
+    compile "org.springframework.cloud:spring-cloud-spring-service-connector"
+    //Spring JDBC
+    compile "org.springframework:spring-jdbc"
+    //Miscellaneous
+    compile "com.fasterxml.jackson.core:jackson-databind"
+    compile "org.projectlombok:lombok"
+    //local Jars
+    compile fileTree(dir: 'libs', include: '*.jar')
+    //Test Dependencies
+    testCompile "junit:junit"
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+    testCompile "org.springframework.security:spring-security-test"
+    testCompile 'org.meanbean:meanbean:2.0.3'
+    testRuntime 'org.hsqldb:hsqldb'
+}
+compileJava.dependsOn(processResources)

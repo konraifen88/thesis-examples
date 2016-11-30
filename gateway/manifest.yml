@@ -1,0 +1,10 @@
+---
+applications:
+- name: gateway
+  memory: 256M
+  instances: 1
+  host: gateway-${random-word}
+  path: build/libs/gateway-1.0-SNAPSHOT.jar
+  services:
+    - redis
+    - oracle

@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+redis:
+  port: 6379
+
+oracle:
+  driverClassName: oracle.jdbc.driver.OracleDriver
+
+zuul:
+  routes:
+    name:
+      url: http://localhost:8090
