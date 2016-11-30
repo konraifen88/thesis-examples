@@ -55,13 +55,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	
 	# Open Ports and setting IP-address. (if you want, you can add the IP to your hosts file)
 	config.vm.network :private_network, ip: "192.168.33.10"
-	ports = YAML.load_file('config/ports.yml')
-	ports.each do |ports|
-		config.vm.network "forwarded_port", 
-			guest: ports["guest"], 
-			host: ports["host"], 
-			auto_correct: ports["autocorrect"]
-	end
 	
 	# Need to install docker before adding images, that proxys will be set.
 	# If not doing so, the script will fail.
