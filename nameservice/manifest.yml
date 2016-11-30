@@ -1,0 +1,10 @@
+---
+applications:
+- name: bookservice
+  memory: 256M
+  instances: 1
+  host: books-${random-word}
+  path: build/libs/book-0.0.1-SNAPSHOT.jar
+  services:
+    - rabbit
+    - redis

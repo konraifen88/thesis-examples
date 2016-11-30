@@ -1,0 +1,10 @@
+server:
+  port: 8081
+
+redis:
+  hostname: 192.168.33.10
+
+rabbit:
+  hostname: 192.168.33.10
+  username: user
+  password: password
