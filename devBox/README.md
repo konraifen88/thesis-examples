@@ -21,9 +21,9 @@ If you are using cntlm to config your proxy, please chekout branch: cntlm
 
 To be able to run behind a proxy, you have to install the vagrant-proxyconf plugin using:
 
-	```
-	vagrant plugin install vagrant-proxyconf
-	```
+```
+vagrant plugin install vagrant-proxyconf
+```
 
 ## Needed Software
 
@@ -83,8 +83,15 @@ See section 'Known Bugs' when adding data to Oracle DB
 ``` shell
 vagrant up --provision
 ```
+## Connect to devBox
 	
-## Current Port Mappings
+To connect to devBox you have to connect to:
+
+    192.168.33.10
+
+The current port mappings can be found below.
+	
+### Current Port Mappings
 
 | Name            | Funktion                               | Port  |
 |-----------------|----------------------------------------|-------|
