@@ -4,7 +4,17 @@ In diesem Projekt befinden sich einige Beispielkonfigurationen zu meiner Abschlu
 Die Abschlussarbeit kann [hier](https://github.com/konraifen88/thesis) gefunden werden.
 
 Die Services können mithilfe der mitgelieferten [devBox](#devbox) betrieben werden, 
-daneben sind allerdings noch Konfigurationen für den Einsatz innerhalb der "Bosch IOT Cloud" eingebaut.
+daneben sind allerdings noch Konfigurationen für den Einsatz innerhalb der "Bosch IOT Cloud" verfügbar.
+
+## Starten der Beispielapplikationen
+
+Um diese Applikationen starten zu Nutzen werden folgende Schritte benötigt:
+
+1. Starten von [devBox](/devBox)
+1. Erst wenn die devBox vollständig gestartet ist, können die Services gestartet werden!
+1. Verbinden zu Gateway mit:
+
+   localhost:8080
 
 ## Inhalt dieses Projektes
 
