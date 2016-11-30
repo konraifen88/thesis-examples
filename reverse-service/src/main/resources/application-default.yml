@@ -1,0 +1,7 @@
+server:
+  port: 8082
+
+rabbit:
+  hostname: 192.168.33.10
+  username: user
+  password: password

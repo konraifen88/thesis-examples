@@ -1,0 +1,9 @@
+---
+applications:
+- name: reverse
+  memory: 256M
+  instances: 1
+  host: reverse-${random-word}
+  path: build/libs/reverse-service-1.0-SNAPSHOT.jar
+  services:
+    - rabbit

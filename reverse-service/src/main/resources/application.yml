@@ -1,0 +1,6 @@
+rabbit:
+  port: 5672
+
+spring:
+  application:
+    name: reverse

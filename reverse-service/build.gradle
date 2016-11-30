@@ -1,0 +1,54 @@
+group 'de.konraifen88.thesis.example'
+version '1.0-SNAPSHOT'
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '3.1'
+  distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'http://repo.spring.io/plugins-release' }
+    }
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE'
+        classpath 'org.cloudfoundry:cf-gradle-plugin:1.1.3'
+        classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.7'
+    }
+}
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'propdeps'
+apply plugin: 'propdeps-idea'
+
+
+jar {
+    baseName = 'reverse-service'
+    version = '1.0-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter')
+
+    //Rabbit
+    compile 'org.springframework.amqp:spring-rabbit'
+
+    //Lombock for @Data
+    compile "org.projectlombok:lombok"
+
+
+    optional "org.springframework.boot:spring-boot-configuration-processor"
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile 'org.meanbean:meanbean:2.0.3'
+}
+compileJava.dependsOn(processResources)
